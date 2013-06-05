@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?><analysisEngineDescription xmlns="http://uima.apache.org/resourceSpecifier">
+  <frameworkImplementation>org.apache.uima.java</frameworkImplementation>
+  <primitive>true</primitive>
+  <annotatorImplementationName>ru.misis.asu.nlp.tokenization.TokenizationAnnotator</annotatorImplementationName>
+  <analysisEngineMetaData>
+    <name>Tokenization-ae</name>
+    <description/>
+    <version>1.0</version>
+    <vendor>MISIS</vendor>
+    <configurationParameters/>
+    <configurationParameterSettings/>
+    <typeSystemDescription>
+      <imports>
+        <import location="./tokenization-ts.xml"/>
+      </imports>
+    </typeSystemDescription>
+    <capabilities>
+      <capability>
+        <inputs>
+          <type allAnnotatorFeatures="true">uima.tcas.DocumentAnnotation</type>
+        </inputs>
+        <outputs>
+          <type>ru.kfu.cll.uima.tokenizer.types.RussianWord</type>
+          <type>ru.kfu.cll.uima.tokenizer.types.Token</type>
+          <type>ru.kfu.cll.uima.tokenizer.types.Abbrevation</type>
+          <type>ru.kfu.cll.uima.tokenizer.types.Bracket</type>
+          <type>ru.kfu.cll.uima.tokenizer.types.ComplexWord</type>
+          <type>ru.kfu.cll.uima.tokenizer.types.Currensy</type>
+          <type>ru.kfu.cll.uima.tokenizer.types.Date</type>
+          <type>ru.kfu.cll.uima.tokenizer.types.Email</type>
+          <type>ru.kfu.cll.uima.tokenizer.types.Letters</type>
+          <type>ru.kfu.cll.uima.tokenizer.types.Measurement</type>
+          <type>ru.kfu.cll.uima.tokenizer.types.Number</type>
+          <type>ru.kfu.cll.uima.tokenizer.types.Percent</type>
+          <type>ru.kfu.cll.uima.tokenizer.types.PM</type>
+          <type>ru.kfu.cll.uima.tokenizer.types.Range</type>
+          <type>ru.kfu.cll.uima.tokenizer.types.Separator</type>
+          <type>ru.kfu.cll.uima.tokenizer.types.Symbol</type>
+        </outputs>
+        <languagesSupported>
+          <language>ru</language>
+        </languagesSupported>
+      </capability>
+    </capabilities>
+    <operationalProperties>
+      <modifiesCas>true</modifiesCas>
+      <multipleDeploymentAllowed>true</multipleDeploymentAllowed>
+      <outputsNewCASes>false</outputsNewCASes>
+    </operationalProperties>
+  </analysisEngineMetaData>
+  <resourceManagerConfiguration/>
+</analysisEngineDescription>
