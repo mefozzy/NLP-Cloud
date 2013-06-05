@@ -13,3 +13,7 @@
 
 target/
 /*/target/
+
+# Intellij IDEA files #
+*.iml
+.idea/
