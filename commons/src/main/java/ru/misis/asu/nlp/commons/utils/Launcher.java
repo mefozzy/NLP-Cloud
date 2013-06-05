@@ -1,28 +1,16 @@
-package ru.misis.asu.parent.utils;
-
-import static java.lang.System.currentTimeMillis;
-
-import java.io.BufferedReader;
-import java.io.ByteArrayInputStream;
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.Iterator;
+package ru.misis.asu.nlp.commons.utils;
 
 import org.apache.uima.UIMAException;
 import org.apache.uima.UIMAFramework;
 import org.apache.uima.analysis_engine.AnalysisEngine;
 import org.apache.uima.analysis_engine.AnalysisEngineDescription;
-import org.apache.uima.cas.Type;
-import org.apache.uima.cas.TypeSystem;
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.util.XMLInputSource;
-
-import com.google.common.io.Files;
-
 import ru.misis.asu.nlp.commons.io.NIOReader;
-import ru.misis.asu.nlp.commons.test.PrettyPrinter;
-import ru.misis.asu.nlp.commons.test.PrettyPrinter.Builder;
+
+import java.io.*;
+
+import static java.lang.System.currentTimeMillis;
 
 /**
  * @author Rinat Gareev (Kazan Federal University)
@@ -41,7 +29,7 @@ public class Launcher {
 			System.err.println("Specified file does not exist");
 			return;
 		}
-		if (Files.getFileExtension(args[0]).equals("xmi")) {
+		if (args[0].substring(args[0].length() - 4, args[0].length()).equals(".xmi")) {
 			System.err.println("File has .xmi extension");
 			return;
 		}
@@ -85,18 +73,5 @@ public class Launcher {
 		ae.process(cas);
 		System.out.println("Finished in " + (currentTimeMillis() - timeBefore)
 				+ " ms");
-		
-		TypeSystem ts = cas.getTypeSystem();
-		Type date = ts.getType("ru.misis.asu.nlp.tokenization.types.Date");
-		Type range = ts.getType("ru.misis.asu.nlp.tokenization.types.Range");
-		Type measurement = ts.getType("ru.misis.asu.nlp.tokenization.types.Measurement");
-		Type word = ts.getType("ru.misis.asu.nlp.tokenization.types.ComplexWord");
-		
-		@SuppressWarnings("unchecked")
-		PrettyPrinter pretty = new Builder(cas.getDocumentText(), 
-				new Iterator[] {
-			cas.getAnnotationIndex(word).iterator()
-		}).typeNames("ComplexWord").build();
-		pretty.print(outputFileName + ".html");
 	}
 }
