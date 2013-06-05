@@ -1,0 +1,3 @@
+var1 = VERB; (HEAD)NOUN
+var2 = (PREP)PREP; (HEAD)NOUN
+NP = var1 or var2 or NP; var1

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?><typeSystemDescription xmlns="http://uima.apache.org/resourceSpecifier">
+  <name>npr-ts</name>
+  <description/>
+  <version>1.0</version>
+  <vendor>MISIS</vendor>
+  <imports>
+    <import location="../../../../../morphoanalysis/src/main/resources/uima.xml/morphoanalysis-ts.xml"/>
+  </imports>
+  <types>
+    <typeDescription>
+      <name>ru.misis.asu.nlp.npr.types.Phrase</name>
+      <description/>
+      <supertypeName>uima.tcas.Annotation</supertypeName>
+      <features>
+        <featureDescription>
+          <name>head</name>
+          <description/>
+          <rangeTypeName>ru.misis.asu.nlp.morphoanalysis.types.Word</rangeTypeName>
+        </featureDescription>
+        <featureDescription>
+          <name>dependents</name>
+          <description/>
+          <rangeTypeName>uima.cas.FSArray</rangeTypeName>
+          <elementType>ru.misis.asu.nlp.morphoanalysis.types.Word</elementType>
+        </featureDescription>
+      </features>
+    </typeDescription>
+    <typeDescription>
+      <name>ru.misis.asu.nlp.npr.types.NounPhrase</name>
+      <description/>
+      <supertypeName>ru.misis.asu.nlp.npr.types.Phrase</supertypeName>
+      <features>
+        <featureDescription>
+          <name>preposition</name>
+          <description/>
+          <rangeTypeName>ru.misis.asu.nlp.morphoanalysis.types.Word</rangeTypeName>
+        </featureDescription>
+        <featureDescription>
+          <name>particle</name>
+          <description/>
+          <rangeTypeName>ru.misis.asu.nlp.morphoanalysis.types.Word</rangeTypeName>
+        </featureDescription>
+      </features>
+    </typeDescription>
+  </types>
+</typeSystemDescription>
