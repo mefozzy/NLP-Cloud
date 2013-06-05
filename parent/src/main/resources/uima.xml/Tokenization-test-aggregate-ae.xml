@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?><analysisEngineDescription xmlns="http://uima.apache.org/resourceSpecifier">
+  <frameworkImplementation>org.apache.uima.java</frameworkImplementation>
+  <primitive>false</primitive>
+  <delegateAnalysisEngineSpecifiers>
+    <delegateAnalysisEngine key="Preprocessing-ae">
+      <import location="../../../../../preprocessing/src/main/resources/uima.xml/Preprocessing-ae.xml"/>
+    </delegateAnalysisEngine>
+    <delegateAnalysisEngine key="Tokenization-ae">
+      <import location="../../../../../tokenization/src/main/resources/uima.xml/Tokenization-ae.xml"/>
+    </delegateAnalysisEngine>
+    <delegateAnalysisEngine key="XmiWriter-ae">
+      <import location="../../../../../postprocessing/src/main/resources/uima.xml/XmiWriter-ae.xml"/>
+    </delegateAnalysisEngine>
+  </delegateAnalysisEngineSpecifiers>
+  <analysisEngineMetaData>
+    <name>Aggregate-ae</name>
+    <description/>
+    <version>1.0</version>
+    <vendor>MISIS</vendor>
+    <configurationParameters searchStrategy="language_fallback">
+      <configurationParameter>
+        <name>InputFile</name>
+        <description>Input file for preprocessing</description>
+        <type>String</type>
+        <multiValued>false</multiValued>
+        <mandatory>true</mandatory>
+        <overrides>
+          <parameter>Preprocessing-ae/InputFile</parameter>
+        </overrides>
+      </configurationParameter>
+      <configurationParameter>
+        <name>OutputFile</name>
+        <type>String</type>
+        <multiValued>false</multiValued>
+        <mandatory>true</mandatory>
+        <overrides>
+          <parameter>XmiWriter-ae/OutputFile</parameter>
+        </overrides>
+      </configurationParameter>
+    </configurationParameters>
+    <configurationParameterSettings>
+      <nameValuePair>
+        <name>InputFile</name>
+        <value>
+          <string>C:\test\Бесы.txt</string>
+        </value>
+      </nameValuePair>
+      <nameValuePair>
+        <name>OutputFile</name>
+        <value>
+          <string>C:\test\out.xmi</string>
+        </value>
+      </nameValuePair>
+    </configurationParameterSettings>
+    <flowConstraints>
+      <fixedFlow>
+        <node>Preprocessing-ae</node>
+        <node>Tokenization-ae</node>
+        <node>XmiWriter-ae</node>
+      </fixedFlow>
+    </flowConstraints>
+    <fsIndexCollection/>
+    <capabilities>
+      <capability>
+        <inputs/>
+        <outputs>
+          <type allAnnotatorFeatures="true">ru.misis.asu.nlp.tokenization.types.Range</type>
+          <type allAnnotatorFeatures="true">ru.misis.asu.nlp.tokenization.types.Measurement</type>
+          <type allAnnotatorFeatures="true">ru.misis.asu.nlp.tokenization.types.Date</type>
+        </outputs>
+        <languagesSupported>
+          <language>ru</language>
+        </languagesSupported>
+      </capability>
+    </capabilities>
+    <operationalProperties>
+      <modifiesCas>true</modifiesCas>
+      <multipleDeploymentAllowed>true</multipleDeploymentAllowed>
+      <outputsNewCASes>false</outputsNewCASes>
+    </operationalProperties>
+  </analysisEngineMetaData>
+  <resourceManagerConfiguration/>
+</analysisEngineDescription>
