@@ -6,7 +6,7 @@
       <import location="../../../../../morphoanalysis/src/main/resources/uima.xml/Morphoanalysis-ae.xml"/>
     </delegateAnalysisEngine>
     <delegateAnalysisEngine key="Preprocessing-ae">
-      <import location="../../../../../preprocessing/src/main/resources/uima.xml/Preprocessing-ae.xml"/>
+      <import location="../../../../../preprocessing/src/main/resources/uima.xml/SingleFileCollectionReader-ae.xml"/>
     </delegateAnalysisEngine>
     <delegateAnalysisEngine key="Tokenization-ae">
       <import location="../../../../../tokenization/src/main/resources/uima.xml/Tokenization-ae.xml"/>
