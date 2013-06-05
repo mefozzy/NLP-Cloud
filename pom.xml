@@ -8,6 +8,10 @@
 	<description>Parent POM for NLP@Cloud projects</description>
 	<version>0.1</version>
 	<packaging>pom</packaging>
+	<organization>
+		<name>MISIS</name>
+		<url>www.misis.ru</url>
+	</organization>
 
 	<properties>
 		<maven.compiler.source>1.7</maven.compiler.source>
@@ -24,6 +28,7 @@
 		<module>morphoanalysis</module>
 		<module>npr</module>
 		<module>postprocessing</module>
+		<module>aggregate</module>
 	</modules>
 
 	<build>
@@ -158,10 +163,6 @@
 		<dependency>
 			<artifactId>uimaj-core</artifactId>
 			<groupId>org.apache.uima</groupId>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.uima</groupId>
-			<artifactId>uimaj-tools</artifactId>
 		</dependency>
 
 		<!--> Test </!-->

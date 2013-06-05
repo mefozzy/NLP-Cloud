@@ -7,7 +7,6 @@
 	</parent>
 	<modelVersion>4.0.0</modelVersion>
 	<artifactId>npr</artifactId>
-	<version>0.1</version>
 	<name>NLP@Cloud Noun Phrase Recognition</name>
 	<description>Noun phrase recognition module for NLP@Cloud library</description>
 	<organization>

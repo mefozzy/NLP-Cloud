@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<parent>
+		<artifactId>nlp-cloud</artifactId>
+		<groupId>ru.misis.asu.nlp</groupId>
+		<version>0.1</version>
+	</parent>
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>aggregate</artifactId>
+	<name>NLP@Cloud Aggregate</name>
+	<organization>
+		<name>MISIS</name>
+		<url>www.misis.ru</url>
+	</organization>
+
+	<properties>
+		<maven.compiler.source>1.7</maven.compiler.source>
+		<maven.compiler.target>1.7</maven.compiler.target>
+	</properties>
+
+	<dependencies>
+		<!--> UIMA </!-->
+		<dependency>
+			<groupId>org.apache.uima</groupId>
+			<artifactId>uimaj-tools</artifactId>
+		</dependency>
+
+		<!--> Test </!-->
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-all</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.powermock</groupId>
+			<artifactId>powermock-module-junit4</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.powermock</groupId>
+			<artifactId>powermock-api-mockito</artifactId>
+		</dependency>
+
+		<!--> Other </!-->
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.tika</groupId>
+			<artifactId>tika-parsers</artifactId>
+		</dependency>
+
+		<!--> Child </!-->
+		<dependency>
+			<groupId>ru.misis.asu.nlp</groupId>
+			<artifactId>commons</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>ru.misis.asu.nlp</groupId>
+			<artifactId>preprocessing</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>ru.misis.asu.nlp</groupId>
+			<artifactId>tokenization</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>ru.misis.asu.nlp</groupId>
+			<artifactId>morphoanalysis</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>ru.misis.asu.nlp</groupId>
+			<artifactId>segmentation</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>ru.misis.asu.nlp</groupId>
+			<artifactId>npr</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>ru.misis.asu.nlp</groupId>
+			<artifactId>postprocessing</artifactId>
+		</dependency>
+	</dependencies>
+</project>

@@ -1,4 +1,4 @@
-package ru.misis.asu.nlp.commons.utils;
+package ru.misis.asu.nlp.aggregate.utils;
 
 import org.apache.uima.UIMAException;
 import org.apache.uima.UIMAFramework;
@@ -39,14 +39,14 @@ public class Launcher {
 		XMLInputSource aeDescInput = new XMLInputSource(
 				"src/main/resources/uima.xml/Tokenization-test-aggregate-ae.xml");
 		AnalysisEngineDescription aeDesc = UIMAFramework.getXMLParser()
-				.parseAnalysisEngineDescription(aeDescInput);
+														.parseAnalysisEngineDescription(aeDescInput);
 		String outputFileName = outputDir.getPath() + "\\"
-				+ inputFile.getName() + ".xmi";
+								+ inputFile.getName() + ".xmi";
 		aeDesc.getAnalysisEngineMetaData().getConfigurationParameterSettings()
-				.setParameterValue("OutputFile", outputFileName);
+			  .setParameterValue("OutputFile", outputFileName);
 		String inputFileName = inputFile.getPath();
 		aeDesc.getAnalysisEngineMetaData().getConfigurationParameterSettings()
-				.setParameterValue("InputFile", inputFileName);
+			  .setParameterValue("InputFile", inputFileName);
 
 		AnalysisEngine ae = UIMAFramework.produceAnalysisEngine(aeDesc);
 
@@ -66,12 +66,12 @@ public class Launcher {
 
 		// Produce analysis engine
 		JCas cas = ae.newJCas();
-	//	cas.setDocumentText(builder.toString());
+		//	cas.setDocumentText(builder.toString());
 
 		// Run
 		long timeBefore = currentTimeMillis();
 		ae.process(cas);
 		System.out.println("Finished in " + (currentTimeMillis() - timeBefore)
-				+ " ms");
+						   + " ms");
 	}
 }
