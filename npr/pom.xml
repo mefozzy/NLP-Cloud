@@ -86,7 +86,7 @@
 		</dependency>
 		<dependency>
 			<groupId>ru.misis.asu.nlp</groupId>
-			<artifactId>morpoanalysis</artifactId>
+			<artifactId>morphoanalysis</artifactId>
 			<version>0.1</version>
 		</dependency>
 	</dependencies>
