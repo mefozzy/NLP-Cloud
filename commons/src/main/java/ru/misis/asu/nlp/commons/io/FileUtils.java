@@ -1,13 +1,13 @@
 package ru.misis.asu.nlp.commons.io;
 
+import ru.misis.asu.nlp.commons.exceptions.ExceptionHandler;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-
-import ru.misis.asu.nlp.commons.exceptions.ExceptionHandler;
 
 public class FileUtils {
 	private FileUtils() {
@@ -22,7 +22,7 @@ public class FileUtils {
 				result.add(line);
 			}
 		} catch (IOException e) {
-			ExceptionHandler.Rethrow(e);
+			ExceptionHandler.rethrow(e);
 		}
 
 		return result;

@@ -1,9 +1,5 @@
 package ru.misis.asu.nlp.morphoanalysis;
 
-import java.util.BitSet;
-import java.util.LinkedList;
-import java.util.List;
-
 import org.apache.uima.UimaContext;
 import org.apache.uima.analysis_component.JCasAnnotator_ImplBase;
 import org.apache.uima.cas.Type;
@@ -15,7 +11,6 @@ import org.apache.uima.resource.ResourceAccessException;
 import org.apache.uima.resource.ResourceConfigurationException;
 import org.apache.uima.resource.ResourceInitializationException;
 import org.apache.uima.util.Logger;
-
 import ru.misis.asu.nlp.commons.cas.FSUtils;
 import ru.misis.asu.nlp.commons.exceptions.ExceptionHandler;
 import ru.misis.asu.nlp.morphoanalysis.model.Lemma;
@@ -25,6 +20,10 @@ import ru.misis.asu.nlp.morphoanalysis.resource.MorphDictionary;
 import ru.misis.asu.nlp.morphoanalysis.resource.SerializedDictionaryResource;
 import ru.misis.asu.nlp.morphoanalysis.types.Word;
 import ru.misis.asu.nlp.tokenization.types.Token;
+
+import java.util.BitSet;
+import java.util.LinkedList;
+import java.util.List;
 
 public class MorphoanalysisAnnotator extends JCasAnnotator_ImplBase {
 	private static final String TOKEN_TYPE_PARAM = "TokenType";
@@ -53,8 +52,7 @@ public class MorphoanalysisAnnotator extends JCasAnnotator_ImplBase {
 					.getResourceObject(MORPH_DICTIONARY_RESOURCE);
 			dict = dictResource.getDictionary();
 		} catch (ResourceAccessException e) {
-			ExceptionHandler.LogAndRethrow(logger,
-					"Morph dictionary initialization error: ", e);
+			ExceptionHandler.logAndRethrow(logger, "Morph dictionary initialization error: ", e);
 		}
 	}
 

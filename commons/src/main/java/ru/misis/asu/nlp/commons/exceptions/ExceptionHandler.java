@@ -8,31 +8,31 @@ public class ExceptionHandler {
 		throw new UnsupportedOperationException();
 	}
 	
-	public static void Log(Logger logger, Exception e) {
+	public static void log(Logger logger, Exception e) {
 		logger.log(Level.SEVERE, e.getMessage());
 	}
 	
-	public static void Rethrow(Exception e) {
+	public static void rethrow(Exception e) {
 		throw new RuntimeException(e);
 	}
 	
-	public static void Rethrow(String message, Exception e) {
+	public static void rethrow(String message, Exception e) {
 		throw new RuntimeException(message, e);
 	}
 	
-	public static void LogAndThrow(Logger logger, String message) {
+	public static void logAndThrow(Logger logger, String message) {
 		RuntimeException exception = new RuntimeException(message); 
-		Log(logger, exception);
+		log(logger, exception);
 		throw exception;
 	}
 	
-	public static void LogAndRethrow(Logger logger, Exception e) {
-		Log(logger, e);
-		Rethrow(e);
+	public static void logAndRethrow(Logger logger, Exception e) {
+		log(logger, e);
+		rethrow(e);
 	}
 	
-	public static void LogAndRethrow(Logger logger, String rethrowMessage, Exception e) {
-		Log(logger, e);
-		Rethrow(rethrowMessage, e);
+	public static void logAndRethrow(Logger logger, String rethrowMessage, Exception e) {
+		log(logger, e);
+		rethrow(rethrowMessage, e);
 	}
 }

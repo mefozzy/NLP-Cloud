@@ -1,16 +1,5 @@
 package ru.misis.asu.nlp.npr;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
-import java.util.logging.Logger;
-
-import com.google.common.base.Strings;
-
 import ru.misis.asu.nlp.commons.algo.AhoCorasick;
 import ru.misis.asu.nlp.commons.algo.Template;
 import ru.misis.asu.nlp.commons.algo.TemplateElement;
@@ -19,6 +8,9 @@ import ru.misis.asu.nlp.morphoanalysis.resource.MorphDictionary;
 import ru.misis.asu.nlp.npr.NPTemplateEncoder.TemplateParser.InputLine;
 import ru.misis.asu.nlp.npr.NPTemplateEncoder.TemplateParser.Resolver;
 import ru.misis.asu.nlp.npr.NPTemplateEncoder.TemplateParser.VariableMap;
+
+import java.util.*;
+import java.util.logging.Logger;
 
 public class NPTemplateEncoder {
 	static class TemplateParser {
@@ -60,7 +52,7 @@ public class NPTemplateEncoder {
 						return label;
 					}
 				}
-				return Strings.nullToEmpty(null);
+				return "";
 			}
 		}
 
@@ -275,11 +267,11 @@ public class NPTemplateEncoder {
 				}
 				usedLabels.add(label);
 				if (label.length() != 0) {
-					if (label == settings.HEAD_LABEL) {
+					if (label.equals(settings.HEAD_LABEL)) {
 						heI = i;
-					} else if (label == settings.PARTICLE_LABEL) {
+					} else if (label.equals(settings.PARTICLE_LABEL)) {
 						paI = i;
-					} else if (label == settings.PREPOSITION_LABEL) {
+					} else if (label.equals(settings.PREPOSITION_LABEL)) {
 						prI = i;
 					}
 				}
