@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?><typeSystemDescription xmlns="http://uima.apache.org/resourceSpecifier">
+  <name>ts-segmentator</name>
+  <description/>
+  <version>1.0</version>
+  <vendor>MISIS</vendor>
+  <imports>
+    <import location="../../../../../tokenization/src/main/resources/uima.xml/tokenization-ts.xml"/>
+  </imports>
+  <types>
+    <typeDescription>
+      <name>ru.misis.asu.nlp.segmentation.types.Sentence</name>
+      <description/>
+      <supertypeName>uima.tcas.Annotation</supertypeName>
+      <features>
+        <featureDescription>
+          <name>eos</name>
+          <description/>
+          <rangeTypeName>ru.misis.asu.nlp.tokenization.types.PM</rangeTypeName>
+        </featureDescription>
+      </features>
+    </typeDescription>
+    <typeDescription>
+      <name>ru.misis.asu.nlp.segmentation.types.PMSegment</name>
+      <description/>
+      <supertypeName>uima.tcas.Annotation</supertypeName>
+      <features>
+        <featureDescription>
+          <name>sentence</name>
+          <description/>
+          <rangeTypeName>ru.misis.asu.nlp.segmentation.types.Sentence</rangeTypeName>
+        </featureDescription>
+        <featureDescription>
+          <name>eopm</name>
+          <description/>
+          <rangeTypeName>ru.misis.asu.nlp.tokenization.types.PM</rangeTypeName>
+        </featureDescription>
+      </features>
+    </typeDescription>
+  </types>
+</typeSystemDescription>

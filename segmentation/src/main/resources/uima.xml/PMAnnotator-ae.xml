@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?><analysisEngineDescription xmlns="http://uima.apache.org/resourceSpecifier">
+  <frameworkImplementation>org.apache.uima.java</frameworkImplementation>
+  <primitive>true</primitive>
+  <annotatorImplementationName>ru.misis.asu.nlp.segmentation.PMSegmentAnnotator</annotatorImplementationName>
+  <analysisEngineMetaData>
+    <name>PMAnnotator-ae</name>
+    <description/>
+    <version>1.0</version>
+    <vendor>MISIS</vendor>
+    <configurationParameters>
+      <configurationParameter>
+        <name>PMType</name>
+        <type>String</type>
+        <multiValued>false</multiValued>
+        <mandatory>false</mandatory>
+      </configurationParameter>
+      <configurationParameter>
+        <name>SentenceType</name>
+        <type>String</type>
+        <multiValued>false</multiValued>
+        <mandatory>false</mandatory>
+      </configurationParameter>
+    </configurationParameters>
+    <configurationParameterSettings>
+      <nameValuePair>
+        <name>PMType</name>
+        <value>
+          <string>ru.misis.asu.nlp.tokenization.types.PM</string>
+        </value>
+      </nameValuePair>
+      <nameValuePair>
+        <name>SentenceType</name>
+        <value>
+          <string>ru.misis.asu.nlp.segmentation.types.Sentence</string>
+        </value>
+      </nameValuePair>
+    </configurationParameterSettings>
+    <typeSystemDescription>
+      <imports>
+        <import location="./segmentation-ts.xml"/>
+      </imports>
+    </typeSystemDescription>
+    <typePriorities/>
+    <fsIndexCollection/>
+    <capabilities>
+      <capability>
+        <inputs>
+          <type allAnnotatorFeatures="true">ru.misis.asu.nlp.segmentation.types.Sentence</type>
+          <type allAnnotatorFeatures="true">ru.misis.asu.nlp.tokenization.types.PM</type>
+        </inputs>
+        <outputs>
+          <type allAnnotatorFeatures="true">ru.misis.asu.nlp.segmentation.types.PMSegment</type>
+        </outputs>
+        <languagesSupported/>
+      </capability>
+    </capabilities>
+    <operationalProperties>
+      <modifiesCas>true</modifiesCas>
+      <multipleDeploymentAllowed>true</multipleDeploymentAllowed>
+      <outputsNewCASes>false</outputsNewCASes>
+    </operationalProperties>
+  </analysisEngineMetaData>
+  <resourceManagerConfiguration/>
+</analysisEngineDescription>
