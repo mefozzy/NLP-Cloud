@@ -3,22 +3,20 @@
  */
 package ru.kfu.itis.cll.uima.util;
 
-import java.io.IOException;
-
 import org.apache.uima.UIMAException;
 import org.apache.uima.UIMAFramework;
 import org.apache.uima.collection.CollectionProcessingEngine;
 import org.apache.uima.collection.metadata.CpeDescription;
 import org.apache.uima.collection.metadata.CpeDescriptorException;
 import org.apache.uima.util.XMLInputSource;
-
 import ru.kfu.itis.cll.uima.cpe.ReportingStatusCallbackListener;
+
+import java.io.IOException;
 
 /**
  * @author Rinat Gareev (Kazan Federal University)
  * 
  */
-// TODO rewrite using CpeLauncher
 public class TxtToXmiLauncher {
 
 	public static void main(String[] args) throws IOException, UIMAException,
